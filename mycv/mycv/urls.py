@@ -28,4 +28,4 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-# handler404 = myprofile_views.error_404
+handler404 = myprofile_views.error_404
