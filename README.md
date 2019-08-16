@@ -3,5 +3,5 @@
 ```sh
 python -m venv env
 activate.bat
-pip install -r requitements.txt
+pip install -r requirements.txt
 ```
