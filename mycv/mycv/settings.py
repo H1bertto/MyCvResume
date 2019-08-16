@@ -130,9 +130,10 @@ USE_TZ = True
 STATIC_URL = 'https://storage.googleapis.com/<YOUR_BUCKET>/static/'
 STATIC_ROOT = 'static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_ROOT = 'media/'
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = 'media/'
+# MEDIA_URL = '/media/'
+MEDIA_URL = 'https://storage.cloud.google.com/<YOUR_BUCKET>/media/'
 
 # E-Mails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
