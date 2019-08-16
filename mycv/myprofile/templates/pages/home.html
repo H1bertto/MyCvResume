@@ -617,9 +617,9 @@
                             <div class="each-client-item">
                                 <div class="mh-client-item dark-bg black-shadow-1">
                                     {% if review.review_picture %}
-                                    <img src="{{review.review_picture.url}}" alt="" style="width: 116px;" class="img-fluid">
+                                    <img src="{{review.review_picture.url}}" alt="" style="width: 116px; height: 116px;" class="img-fluid">
                                     {% else %}
-                                    <img src="{% static 'images/person.png' %}" alt="" style="width: 116px;" class="img-fluid">
+                                    <img src="{% static 'images/person.png' %}" alt="" style="width: 116px; height: 116px;" class="img-fluid">
                                     {% endif %}                                    
                                     <p>{{review.testimonial}}</p>
                                     <h4>{{review.name}}</h4>
