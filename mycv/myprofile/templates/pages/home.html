@@ -1,0 +1,798 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home | Humberto Vieira</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Maha Personal cv/resume template for professional and personal website." />
+        <meta name="keywords" content="creative, cv, designer,  online cv, online resume, powerful portfolio, professional, professional resume, responsive, resume, vcard " />
+        <meta name="developer" content="Md. Siful Islam">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                
+        <!-- FAV AND ICONS   -->
+        <link rel="shortcut icon" href="{% static 'images/myprofile.ico' %}">
+        <!-- <link rel="shortcut icon" href="{% static 'images/apple-icon.png' %}">
+        <link rel="shortcut icon" sizes="72x72" href="{% static 'images/apple-icon-72x72.png' %}">
+        <link rel="shortcut icon" sizes="114x114" href="{% static 'images/apple-icon-114x114.png' %}"> -->
+        
+        <!-- Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{% static 'icons/font-awesome-4.7.0/css/font-awesome.css' %}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.min.css' %}">
+        <!-- Animate CSS-->
+        <link rel="stylesheet" href="{% static 'plugins/css/animate.css' %}">
+        <!-- Owl Carousel CSS-->
+        <link rel="stylesheet" href="{% static 'plugins/css/owl.css' %}">
+        <!-- Fancybox-->
+        <link rel="stylesheet" href="{% static 'plugins/css/jquery.fancybox.min.css' %}">
+        
+        <!-- Custom CSS-->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        
+        <!-- Color -->
+        <link rel="stylesheet" href="{% static 'css/colors/red.css' %}" title="orange">
+        
+        
+    </head>
+    <body class="white-vertion black-bg">
+        
+        <!-- Start Loader -->
+        <div class="section-loader">
+            <div class="loader">
+                <div></div>
+                <div></div> 
+            </div>
+        </div>
+        <!-- End Loader -->
+        
+        <!--
+        ===================
+           NAVIGATION
+        ===================
+        -->
+        <header class="black-bg mh-header mh-fixed-nav nav-scroll mh-xs-mobile-nav" id="mh-header">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg mh-nav nav-btn">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon icon"></span>
+                        </button>
+                    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#mh-home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-projects">Projects</a>
+                                </li> 
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-skills">Skills</a>
+                                </li>                                
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-experience">Experiences</a>
+                                </li>                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-portfolio">Portfolio</a>
+                                </li> 
+                                <!-- <li class="nav-item" data-toggle="dropdown" data-hover="dropdown">
+                                    <a class="nav-link" href="#mh-blog">Blog</a>
+                                    <ul class="nav-scroll dropdown-menu" role="menu">
+                                        <li><a href="">All Education</a></li>
+                                        <li><a href="">All Work Experience</a></li>
+                                    </ul>
+                                </li> -->
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!--
+        ===================
+           HOME
+        ===================
+        -->
+        <section class="mh-home image-bg home-2-img" id="mh-home">
+            <div class="img-foverlay img-color-overlay">
+                <div class="container">
+                    <div class="row section-separator xs-column-reverse vertical-middle-content home-padding">
+                        <div class="col-sm-6">
+                            <div class="mh-header-info">
+                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                                    <span>Hello I'm</span>
+                                </div>
+                                
+                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{profile.name}}</h2>
+                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">{{profile.profession}}</h4>
+                                
+                                <ul>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a href="mailto:">{{profile.email}}</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a href="callto:">{{profile.telephone}}</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-map-marker"></i><address>{{profile.adress}}</address></li>
+                                </ul>
+                                
+                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                    {% if profile.url_github %}
+                                    <li><a href="{{profile.url_github}}"><i class="fa fa-github"></i></a></li>
+                                    {% endif %}
+                                    {% if profile.url_linkedin %}
+                                    <li><a href="{{profile.url_linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                                    {% endif %}
+                                    {% if profile.url_facebook %}
+                                    <li><a href="{{profile.url_facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                    {% endif %}
+                                    {% if profile.url_twitter %}
+                                    <li><a href="{{profile.url_twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                    {% endif %}
+                                    {% if profile.url_instagram %}
+                                    <li><a href="{{profile.url_instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                    {% endif %}                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <div class="img-border">
+                                    <img src="{{profile.picture.url}}" alt=""  class="img-fluid" style="width: 425px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           ABOUT
+        ===================
+        -->
+        <section class="mh-about" id="mh-about">
+            <br><br>
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                            <img src="{% static 'images/code.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-inner">
+                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                {{profile.about|linebreaks}}
+                            </p>
+                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <ul>
+                                    {% for technology in technologies %}
+                                    {% if technology.visible %}
+                                    <li><span>{{technology.name}}</span></li>
+                                    {% endif %}
+                                    {% endfor %}                                    
+                                </ul>
+                            </div>
+                            <a href="{{profile.url_cv}}" alt="My Curriculum" target="_blank" class="btn btn-fill btn2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Downlaod CV <i class="fa fa-download"></i></a>
+                            <a href="{{profile.url_strengths}}" alt="My Strengths -By: https://www.gallup.com/home.aspx" target="_blank" class="btn btn-fill btn2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Top 10 Strengths <i class="fa fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           SERVICE
+        ===================
+        -->
+        {% if services %}
+        <section class="mh-service">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h2>What I do</h2>
+                    </div>
+                    {% for service in services %}
+                    <div class="col-sm-3">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="fa {{service.icon}} red-color"></i>
+                            <h3>{{service.title}}</h3>
+                            <p>
+                                {{service.description}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!--
+        ===================
+          FEATURE PROJECTS
+        ===================
+        -->
+        <section class="mh-featured-project image-bg featured-img-one" id="mh-projects">
+            <div class="img-color-overlay">
+                <br><br>
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="section-title col-sm-12">
+                            <h3>Featured Projects</h3>
+                        </div>
+                        {% if featured_projects %}
+                        <div class="col-sm-12">
+                            <div class="mh-single-project-slide-by-side row">
+                                {% for ftd_project in featured_projects %}                                
+                                {% if ftd_project.visible %}                                                        
+                                <!-- Project Items -->
+                                <div class="col-sm-12 mh-featured-item">
+                                    <div class="row">
+                                        <div class="col-sm-7">
+                                            <div class="mh-featured-project-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">  
+                                                {% if ftd_project.image %}
+                                                <img src="{{ftd_project.image.url}}" alt="" class="img-fluid">
+                                                {% else %}
+                                                <img src="{% static 'images/default.png' %}" alt="" class="img-fluid">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="mh-featured-project-content">
+                                                <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ftd_project.category.name}}</h4>
+                                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">{{ftd_project.title}}</h2>
+                                                <span class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">{{ftd_project.sub_title}}</span>
+                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">{{ftd_project.description}}</p>
+                                                {% if ftd_project.url%}
+                                                <a href="{{ftd_project.url}}" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">View Details</a>
+                                                {% endif %}
+                                                <div class="mh-testimonial wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.9s">
+                                                    {% if ftd_project.testimonial_name %}
+                                                    <blockquote>
+                                    					<q>{{ftd_project.testimonial_text}}</q>
+                                    					<cite>- {{ftd_project.testimonial_name}}</cite>
+                                                        <div style="padding-left: 10px"> {{ftd_project.testimonial_role}}, {{ftd_project.testimonial_company}}</div>
+                                    				</blockquote>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}                              
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="col-sm-12">
+                            <h6 class="fa-stack-1x">No projects yet...</h6>
+                        </div>
+                        {% endif %}
+                    </div> <!-- End: .row -->
+                </div>
+            </div>
+        </section>  
+        
+        <!--
+        ===================
+           SKILLS
+        ===================
+        -->
+        <section class="mh-skills" id="mh-skills">
+            <br><br>
+            <div class="home-v-img">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="section-title text-center col-sm-12">
+                            <!--<h2>Skills</h2>-->
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-skills-inner">
+                                <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                    <h3>Technical Skills</h3>
+                                    <div class="each-skills">
+                                        {% for skill in technical_skills %}
+                                        {% if skill.technical_skill %}
+                                        <div class="candidatos">
+                                            <div class="parcial">
+                                                <div class="info">
+                                                    <div class="nome">{{skill.name}}</div>
+                                                    <div class="percentagem-num">{{skill.knowledge}}%</div>
+                                                </div>
+                                                <div class="progressBar">
+                                                    <div class="percentagem" style="width: {{skill.knowledge}}%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <h3>Professional Skills</h3>
+                                <ul class="mh-professional-progress">
+                                    <li>
+                                        <div class="mh-progress mh-progress-circle" data-progress="{{profile.value_skill_1}}"></div>
+                                        <div class="pr-skill-name">{{profile.skill_1}}</div>
+                                    </li>
+                                    <li>
+                                        <div class="mh-progress mh-progress-circle" data-progress="{{profile.value_skill_2}}"></div> 
+                                        <div class="pr-skill-name">{{profile.skill_2}}</div>
+                                    </li>
+                                    <li>
+                                        <div class="mh-progress mh-progress-circle" data-progress="{{profile.value_skill_3}}"></div>
+                                        <div class="pr-skill-name">{{profile.skill_3}}</div>
+                                    </li> 
+                                    <li>
+                                        <div class="mh-progress mh-progress-circle" data-progress="{{profile.value_skill_4}}"></div>
+                                        <div class="pr-skill-name">{{profile.skill_4}}</div>
+                                    </li>
+                                    <li>
+                                        <div class="mh-progress mh-progress-circle" data-progress="{{profile.value_skill_5}}"></div>
+                                        <div class="pr-skill-name">{{profile.skill_5}}</div>
+                                    </li> 
+                                    <li>
+                                        <div class="mh-progress mh-progress-circle" data-progress="{{profile.value_skill_6}}"></div>
+                                        <div class="pr-skill-name">{{profile.skill_6}}</div>
+                                    </li>
+                                </ul>                                
+                            </div>                            
+                        </div>                                                
+                    </div>                    
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           EXPERIENCES
+        ===================
+        -->
+        {% if educations or work_experiences %}
+        <section class="mh-experince image-bg featured-img-two" id="mh-experience">
+            <div class="img-color-overlay">
+                <br><br>
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-education">
+                                <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
+                                <div class="mh-education-deatils">
+                                    {% for education in educations %}
+                                    {% if education.visible %}
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <h4>{{education.course}} At <a href="{{education.url_institution}}">{{education.institution}}</a></h4>
+                                        <div class="mh-eduyear">{{education.get_start_year}} - {{education.get_end_year}}</div>
+                                        <p>{{education.description}}</p>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <!-- <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <hr>
+                                        <a href=""><div class="mh-eduyear">See All Educations</div></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-work">
+                                 <h3>Work Experience</h3>
+                                <div class="mh-experience-deatils">
+                                    {% for work_exp in work_experiences %}
+                                    {% if work_exp.visible %}
+                                    <!-- Companies-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                        <h4>{{work_exp.profession}} At <a href="{{work_exp.url_company}}">{{work_exp.company}}</a></h4>
+                                        <div class="mh-eduyear">{{work_exp.get_start_year}} - {{work_exp.get_end_year}}</div>
+                                        <span>Responsibility :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>{{work_exp.role_1}}</li>
+                                            <li><i class="fa fa-circle"></i>{{work_exp.role_2}}</li>
+                                        </ul>
+                                    </div>                                
+                                    {% endif %}
+                                    {% endfor %}
+                                    <!-- <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <hr>
+                                        <a href=""><div class="mh-eduyear">See All Work Experiences</div></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>       
+        {% endif %}
+        <!--
+        ===================
+           PORTFOLIO
+        ===================
+        -->
+        {% if portfolios %}
+        <section class="mh-portfolio" id="mh-portfolio">
+            <br><br>
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                        <h3>Recent Portfolio</h3>
+                    </div>
+                    <div class="part col-sm-12">
+                        <div class="portfolio-nav col-sm-12" id="filter-button">
+                            <ul>
+                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"> <span>All Categories</span></li>
+                                {% for category in categories %}
+                                <li data-filter=".{{category.slug}}" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s"><span>{{category.name}}</span></li>
+                                {% endfor %}                                
+                            </ul>
+                        </div>
+                        <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <div class="portfolioContainer row">
+                                {% for portfolio in portfolios %}
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 {{portfolio.categories.all|join:' '}}">
+                                    <figure>
+                                        <img src="{% static 'images/portfolio/g1.jpg' %}" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">{{portfolio.title}}</h5>
+                                            <span class="sub-title">{{portfolio.sub_title}}</span>
+                                            <a data-fancybox data-src="#{{portfolio.slug}}"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                {% endfor %}                                
+                            </div> <!-- End: .grid .project-gallery -->
+                        </div> <!-- End: .grid .project-gallery -->
+                    </div> <!-- End: .part -->
+                </div> <!-- End: .row -->
+            </div>
+            {% for portfolio in portfolios %}
+            <div class="mh-portfolio-modal" id="{{portfolio.slug}}">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>{{portfolio.title}}</h2>
+                            <p>{{portfolio.text | linebreaks}}</p>      
+                            <div class="mh-about-tag">                                
+                                <ul>
+                                    {% for technology in portfolio.technologies.all %}
+                                    <li><span>{{technology}}</span></li>
+                                    {% endfor %}
+                                </ul>                                
+                            </div>
+                            <a href="{{portfolio.url}}" class="btn btn-fill">Live Demo</a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                {% if portfolio.image_1 %}
+                                <img src="{{portfolio.image_1.url}}" alt="" class="img-fluid">
+                                <p>{{portfolio.legenda_1}}</p>
+                                {% else %}
+                                <img src="{% static 'images/pr-0.jif' %}" alt="" class="img-fluid">
+                                <p>All variations are organized separately so you can use / customize the template very easily.</p>
+                                {% endif %}    
+                                {% if portfolio.image_2 %}
+                                <img src="{{portfolio.image_2.url}}" alt="" class="img-fluid">
+                                <p>{{portfolio.legenda_2}}</p>
+                                {% else %}
+                                <img src="{% static 'images/pr-0.jif' %}" alt="" class="img-fluid">
+                                <p>All variations are organized separately so you can use / customize the template very easily.</p>
+                                {% endif %}
+                                {% if portfolio.image_3 %}
+                                <img src="{{portfolio.image_3.url}}" alt="" class="img-fluid">
+                                <p>{{portfolio.legenda_3}}</p>
+                                {% else %}
+                                <img src="{% static 'images/pr-0.jif' %}" alt="" class="img-fluid">
+                                <p>All variations are organized separately so you can use / customize the template very easily.</p>
+                                {% endif %}     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        <!--
+        ===================
+           QUATES
+        ===================
+        -->
+        <section class="mh-quates image-bg home-2-img">
+            <div class="img-color-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="each-quates col-sm-12 col-md-6">
+                            <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Interested?</h3>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">{{profile.hire_me|linebreaks}}</p>
+                            <a href="#mh-contact" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           BLOG
+        ===================
+        -->
+        <!-- <section class="mh-blog image-bg featured-img-two" id="mh-blog">
+            <div class="img-color-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                            <h3>Featured Posts</h3>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                             <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <img src="assets/images/b-3.png" alt="" class="img-fluid">
+                                <div class="blog-inner">
+                                    <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
+                                    <div class="mh-blog-post-info">
+                                        <ul>
+                                            <li><strong>Post On</strong><a href="">24.11.19</a></li>
+                                            <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                        </ul>
+                                    </div>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                    <a href="blog-single.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <img src="assets/images/b-2.png" alt="" class="img-fluid">
+                                <div class="blog-inner">
+                                    <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
+                                    <div class="mh-blog-post-info">
+                                        <ul>
+                                            <li><strong>Post On</strong><a href="">24.11.19</a></li>
+                                            <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                        </ul>
+                                    </div>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                    <a href="blog-single.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                <img src="assets/images/b-1.png" alt="" class="img-fluid">
+                                <div class="blog-inner">
+                                    <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
+                                    <div class="mh-blog-post-info">
+                                        <ul>
+                                            <li><strong>Post On</strong><a href="">24.11.19</a></li>
+                                            <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                        </ul>
+                                    </div>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                    <a href="blog-single.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  -->
+        
+        <!--
+        ===================
+           Testimonial
+        ===================
+        -->
+        <section class="mh-testimonial" id="mh-testimonial">
+            <div class="home-v-img">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                            {% if reviews %}
+                            <h3>Reviews</h3>
+                            {% endif %}
+                        </div>
+                        <div class="col-sm-12 wow fadeInUp" id="mh-client-review" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            {% for review in reviews %}
+                            {% if review.visible %}
+                            <div class="each-client-item">
+                                <div class="mh-client-item dark-bg black-shadow-1">
+                                    {% if review.review_picture %}
+                                    <img src="{{review.review_picture.url}}" alt="" style="width: 116px;" class="img-fluid">
+                                    {% else %}
+                                    <img src="{% static 'images/person.png' %}" alt="" style="width: 116px;" class="img-fluid">
+                                    {% endif %}                                    
+                                    <p>{{review.testimonial}}</p>
+                                    <h4>{{review.name}}</h4>
+                                    <span>{{review.role}}, {{review.company}}</span>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           FOOTER 3
+        ===================
+        -->
+        <footer class="mh-footer mh-footer-3" id="mh-contact">
+            <br><br>
+            <div class="container-fluid">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Contact Me</h3>
+                    </div>
+                    <div class="map-image image-bg col-sm-12">
+                        <div class="container mt-30">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 mh-footer-address">
+                                    <div class="col-sm-12 xs-no-padding">
+                                        <div class="mh-address-footer-item dark-bg shadow-1 media wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                            <div class="each-icon">
+                                                <i class="fa fa-location-arrow"></i>
+                                            </div>
+                                            <div class="each-info media-body">
+                                                <h4>Address</h4>
+                                                <address>
+                                                    {{profile.adress}}
+                                                </address>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 xs-no-padding">
+                                        <div class="mh-address-footer-item media dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                            <div class="each-icon">
+                                                <i class="fa fa-envelope-o"></i>
+                                            </div>
+                                            <div class="each-info media-body">
+                                                <h4>Email</h4>
+                                                <a href="mailto:humbertovs20@gmail.com">{{profile.email}}</a><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 xs-no-padding">
+                                        <div class="mh-address-footer-item media dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                            <div class="each-icon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <div class="each-info media-body">
+                                                <h4>Phone</h4>
+                                                <a href="callto:+55 31 99196-8972">{{profile.telephone}}</a><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                    <form action="#mh-contact" class="single-form quate-form wow fadeInUp" data-toggle="validator" role="form" method="POST">
+                                        {% csrf_token %}
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="row">                                            
+                                            <div class="col-sm-12">
+                                                <input name="subject" class="contact-subject form-control" id="subject" type="text" placeholder="Subject" required>
+                                            </div>                
+                                            <div class="col-sm-12">
+                                                <input name="name" class="contact-name form-control" id="name" type="text" placeholder="Your Name" required>
+                                            </div>                
+                                            <div class="col-sm-12">
+                                                <input name="email" class="contact-email form-control" id="email" type="email" placeholder="Your Email" required>
+                                            </div>                
+                                            <div class="col-sm-12">
+                                                <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                            </div>                                            
+                                            {% if is_valid %}
+                                            <div class="col-sm-12" style="padding-bottom: 40px;">
+                                                <span class="fa-stack-1x">
+                                                    <i class="fa fa-check"></i> Sent with success!
+                                                </span>
+                                            </div>
+                                            {% endif %}
+                                            <!-- Subject Button -->
+                                            <div class="btn-form col-sm-12">
+                                                <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left text-xs-center">
+                                                <p>Template Design Created By 
+                                                    <a href="https://www.linkedin.com/in/getsiful/" style="color: #ff0000">
+                                                        Siful Islam
+                                                    </a> 
+                                                    @ 2018
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul class="social-icon">
+                                                {% if profile.url_github %}
+                                                <li><a href="{{profile.url_github}}"><i class="fa fa-github"></i></a></li>
+                                                {% endif %}
+                                                {% if profile.url_linkedin %}
+                                                <li><a href="{{profile.url_linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                                                {% endif %}
+                                                {% if profile.url_facebook %}
+                                                <li><a href="{{profile.url_facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                                {% endif %}
+                                                {% if profile.url_twitter %}
+                                                <li><a href="{{profile.url_twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                                {% endif %}
+                                                {% if profile.url_instagram %}
+                                                <li><a href="{{profile.url_instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                                {% endif %}                                    
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!--
+    ==============
+    * JS Files *
+    ==============
+    -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <!-- jQuery -->
+    <script src="{% static 'plugins/js/jquery.min.js' %}"></script>
+    <!-- popper -->
+    <script src="{% static 'plugins/js/popper.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'plugins/js/bootstrap.min.js' %}"></script>
+    <!-- owl carousel -->
+    <script src="{% static 'plugins/js/owl.carousel.js' %}"></script>
+    <!-- validator -->
+    <script src="{% static 'plugins/js/validator.min.js' %}"></script>
+    <!-- wow -->
+    <script src="{% static 'plugins/js/wow.min.js' %}"></script>
+    <!-- mixin js-->
+    <script src="{% static 'plugins/js/jquery.mixitup.min.js' %}"></script>
+    <!-- circle progress-->
+    <script src="{% static 'plugins/js/circle-progress.js' %}"></script>
+    <!-- jquery nav -->
+    <script src="{% static 'plugins/js/jquery.nav.js' %}"></script>
+    <!-- Fancybox js-->
+    <script src="{% static 'plugins/js/jquery.fancybox.min.js' %}"></script>
+    <!-- Map api -->
+    <!-- <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyCRP2E3BhaVKYs7BvNytBNumU0MBmjhhxc"></script> -->
+    <!-- isotope js-->
+    <script src="{% static 'plugins/js/isotope.pkgd.js' %}"></script>
+    <script src="{% static 'plugins/js/packery-mode.pkgd.js' %}"></script>
+    <!-- Custom Scripts-->
+    <!-- <script src="assets/js/map-init.js"></script> -->
+    <script src="{% static 'js/custom-scripts.js' %}"></script>
+
+</body>
+</html>

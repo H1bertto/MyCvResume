@@ -1,0 +1,3 @@
+:: Activate Virtual Enviroment
+@ECHO Activating Virtual Environment ...
+@CD /D env/Scripts && activate && CD ../../mycv
