@@ -9,7 +9,7 @@ Ajuste settings.py de acordo com suas informações\
 Após isso segue os comandos
 
 ```sh
-python manage.py migrate
+python manage.py migrate  # se necessário
 python manage.py collectstatic
 gsutil -m rsync -R static/ gs://<YOUR_BUCKET>/static/
 gcloud app deploy
