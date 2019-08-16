@@ -24,7 +24,6 @@ from django.conf.urls import handler404
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myprofile_views.home, name='home'),
-    path('as', myprofile_views.error_404, name='error_404'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
