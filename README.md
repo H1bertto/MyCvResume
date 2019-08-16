@@ -5,7 +5,7 @@ python -m venv env
 activate.bat
 pip install -r requirements.txt
 ```
-Ajuste settings.py de acordo com suas informações
+Ajuste settings.py de acordo com suas informações\
 Após isso segue os comandos
 
 ```sh
