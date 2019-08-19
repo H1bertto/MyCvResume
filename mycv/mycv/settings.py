@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8%6n28p656bgnuq&sfi*)aj6d8$+18&mf*whu5v9zvd4)kfx*b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,21 +74,29 @@ WSGI_APPLICATION = 'mycv.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '<NAME_YOUR_DB>',
-        'USER': '<NAME_USER_DB>',
-        'PASSWORD': '<PASSWORD>',
-        'PORT': '3306',
+if True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
-
-DATABASES['default']['HOST'] = '/cloudsql/<CONECTION_NAME_YOUR_INSTANCE>'
-if os.getenv('GAE_INSTANCE'):
-    pass
 else:
-    DATABASES['default']['HOST'] = '<IP_PUBLIC_YOUR_SQL_INSTANCE>'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': '<NAME_YOUR_DB>',
+            'USER': '<NAME_USER_DB>',
+            'PASSWORD': '<PASSWORD>',
+            'PORT': '3306',
+        }
+    }
+
+    DATABASES['default']['HOST'] = '/cloudsql/<CONECTION_NAME_YOUR_INSTANCE>'
+    if os.getenv('GAE_INSTANCE'):
+        pass
+    else:
+        DATABASES['default']['HOST'] = '<IP_PUBLIC_YOUR_SQL_INSTANCE>'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -126,14 +134,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# STATIC_URL = '/static/'
-STATIC_URL = 'https://storage.googleapis.com/<YOUR_BUCKET>/static/'
+STATIC_URL = '/static/'
+# STATIC_URL = 'https://storage.googleapis.com/<YOUR_BUCKET>/static/'
 STATIC_ROOT = 'static/'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = 'media/'
-# MEDIA_URL = '/media/'
-MEDIA_URL = 'https://storage.cloud.google.com/<YOUR_BUCKET>/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
+# MEDIA_URL = 'https://storage.cloud.google.com/<YOUR_BUCKET>/media/'
 
 # E-Mails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
