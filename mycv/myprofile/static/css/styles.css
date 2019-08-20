@@ -1623,9 +1623,10 @@ body {
       FOOTER 1
     ==============
 */
-/*.mh-footer ::placeholder {
-  opacity: 0.9; }
-.mh-footer .form-control {
+.mh-footer ::placeholder {
+  font-size: 17px;
+  opacity: 0.8; }
+/*.mh-footer .form-control {
   padding: 20px;
   -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
