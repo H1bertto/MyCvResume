@@ -51,7 +51,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-__NOTA:__ Antes de você abrir o site *http://localhost:8000/*, você rpecisa entrar no */admin* e cadastrar o seu *Profile* com suas informações
+__NOTA:__ Antes de você abrir o site *http://localhost:8000/* você precisa entrar no */admin* e cadastrar o seu *Profile* com suas informações
 
 
 ## Deploy
