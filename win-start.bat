@@ -1,7 +1,4 @@
 :: Activate Virtual Enviroment - Linux
-@ECHO Activating Virtual Environment ...
-@CD /D env/Scripts && activate && CD ../../mycv
-
 @ECHO Step #1 - Generate Python Enviroment ...
 @python -m venv env
 @ECHO Step #1 - Done

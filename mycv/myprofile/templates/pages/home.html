@@ -450,7 +450,7 @@
                                 {% for portfolio in portfolios %}
                                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 {{portfolio.categories.all|join:' '}}">
                                     <figure>
-                                        <img src="{% static 'images/portfolio/g1.jpg' %}" alt="img04">
+                                        <img src="{{portfolio.cover_image.url}}" alt="{{portfolio.title}} Cover Image" style="width: 380px;">
                                         <figcaption class="fig-caption">
                                             <i class="fa fa-search"></i>
                                             <h5 class="title">{{portfolio.title}}</h5>
@@ -479,30 +479,21 @@
                                     {% endfor %}
                                 </ul>                                
                             </div>
-                            <a href="{{portfolio.url}}" class="btn btn-fill">Live Demo</a>
+                            <a href="{{portfolio.url}}" class="btn btn-fill">{{portfolio.url_info}}</a>
                         </div>
                         <div class="col-sm-7">
                             <div class="mh-portfolio-modal-img">
                                 {% if portfolio.image_1 %}
                                 <img src="{{portfolio.image_1.url}}" alt="" class="img-fluid">
                                 <p>{{portfolio.legenda_1}}</p>
-                                {% else %}
-                                <img src="{% static 'images/pr-0.jif' %}" alt="" class="img-fluid">
-                                <p>All variations are organized separately so you can use / customize the template very easily.</p>
                                 {% endif %}    
                                 {% if portfolio.image_2 %}
                                 <img src="{{portfolio.image_2.url}}" alt="" class="img-fluid">
                                 <p>{{portfolio.legenda_2}}</p>
-                                {% else %}
-                                <img src="{% static 'images/pr-0.jif' %}" alt="" class="img-fluid">
-                                <p>All variations are organized separately so you can use / customize the template very easily.</p>
                                 {% endif %}
                                 {% if portfolio.image_3 %}
                                 <img src="{{portfolio.image_3.url}}" alt="" class="img-fluid">
                                 <p>{{portfolio.legenda_3}}</p>
-                                {% else %}
-                                <img src="{% static 'images/pr-0.jif' %}" alt="" class="img-fluid">
-                                <p>All variations are organized separately so you can use / customize the template very easily.</p>
                                 {% endif %}     
                             </div>
                         </div>
