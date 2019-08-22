@@ -4,7 +4,7 @@ from .models import WorkExperience, Review, FeaturedProject, Service
 
 
 class PortfolioAdmin(admin.ModelAdmin):
-	list_display = ['title', 'sub_title']
+	list_display = ['title', 'sub_title', 'visible']
 	search_fields = ['title', 'sub_title', 'category', 'technologies']
 	prepopulated_fields = {'slug': ('title',)}
 
