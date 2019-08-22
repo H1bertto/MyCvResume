@@ -448,6 +448,7 @@
                         <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
                             <div class="portfolioContainer row">
                                 {% for portfolio in portfolios %}
+                                {% if portfolio.visible %}
                                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 {{portfolio.categories.all|join:' '}}">
                                     <figure>
                                         <img src="{{portfolio.cover_image.url}}" alt="{{portfolio.title}} Cover Image" style="width: 380px;">
@@ -459,6 +460,7 @@
                                         </figcaption>
                                     </figure>
                                 </div>
+                                {% endif %}
                                 {% endfor %}                                
                             </div> <!-- End: .grid .project-gallery -->
                         </div> <!-- End: .grid .project-gallery -->

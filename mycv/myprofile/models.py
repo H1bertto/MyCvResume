@@ -23,6 +23,7 @@ class Portfolio(models.Model):
 	legenda_3 = models.CharField('Legenda 3', max_length=250, blank=True)
 	url = models.CharField('Url Project', blank=True, null=True, max_length=400)
 	url_info = models.CharField('Info Link', blank=True, null=True, max_length=30)
+	visible = models.BooleanField('Visible', blank=True, default=True)
 
 	objects = PortfolioManager()
 
