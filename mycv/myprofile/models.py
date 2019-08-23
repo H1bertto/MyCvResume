@@ -14,7 +14,7 @@ class Portfolio(models.Model):
 	text = models.TextField('Description')
 	categories = models.ManyToManyField('myprofile.Category')
 	technologies = models.ManyToManyField('myprofile.Technology')
-	cover_image = models.ImageField(verbose_name='Cover', upload_to='portfolio/images')
+	cover_image = models.ImageField(verbose_name='Cover Image', upload_to='portfolio/images')
 	image_1 = models.ImageField(verbose_name='Image 1', blank=True, upload_to='portfolio/images')
 	legenda_1 = models.CharField('Legenda 1', max_length=250, blank=True)
 	image_2 = models.ImageField(verbose_name='Image 2', blank=True, upload_to='portfolio/images')
