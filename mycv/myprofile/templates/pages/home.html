@@ -473,7 +473,7 @@
                     <div class="row mh-portfolio-modal-inner">
                         <div class="col-sm-5">
                             <h2>{{portfolio.title}}</h2>
-                            <p>{{portfolio.text | linebreaks}}</p>      
+                            <p>{{portfolio.text | linebreaks | force_escape }}</p>      
                             <div class="mh-about-tag">                                
                                 <ul>
                                     {% for technology in portfolio.technologies.all %}
