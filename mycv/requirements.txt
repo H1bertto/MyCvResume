@@ -3,5 +3,5 @@ pypiwin32==223; platform_system == "Windows"
 Pillow==6.2.0
 # PyMySQL==0.9.3
 mysqlclient==1.4.1
-wheel==0.32.3
+wheel==0.38.1
 gunicorn==19.9.0
